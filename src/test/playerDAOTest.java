@@ -13,72 +13,71 @@ import org.junit.Test;
 import DAO.playerDAO;
 import DAO.connection;
 
-
-    // TODO: Auto-generated Javadoc
+// TODO: Auto-generated Javadoc
 /**
-     * The Class playerDAOTest.
-     *
-     * @author yujiaqing
-     * @version  v1.0
-     * @date 2020年7月4日
-     */
-    
+ * The Class playerDAOTest.
+ *
+ * @author yujiaqing
+ * @version v1.0
+ * @date 2020年7月4日
+ */
+
 public class playerDAOTest {
-     
-     /** The connection. */
-     connection connection=new connection();
-     
-     /** The player. */
-     playerDAO player;
-     
-     /** The name. */
-     String name;
-     
-     /**
-      * Start.
-      */
-     @Before
-     public void start() {
-    	 try {
- 			connection.connect();
- 		} catch (Exception e) {
- 			// TODO Auto-generated catch block
- 			e.printStackTrace();
- 		}
-    	 player= new playerDAO(connection);
-    	 name="科比-布莱恩特";
-     }
-	
+
+	/** The connection. */
+	connection connection = new connection();
+
+	/** The player. */
+	playerDAO player;
+
+	/** The name. */
+	String name;
+
+	/**
+	 * Start.
+	 */
+	@Before
+	public void start() {
+		try {
+			connection.connect();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		player = new playerDAO(connection);
+		name = "科比-布莱恩特";
+	}
+
 	/**
 	 * Insert player 1 test.
 	 */
 	@Test
 	public void insertPlayer1Test() {
-		boolean f1=player.insertPlayer1(name);
+		boolean f1 = player.insertPlayer1(name);
 		assertTrue(f1);
 	}
-	
+
 	/**
 	 * Change team test.
 	 */
 	@Test
 	public void changeTeamTest() {
-		String teamName="湖人";
-		boolean f2=player.changeTeam1(name, teamName);
+		String teamName = "湖人";
+		boolean f2 = player.changeTeam1(name, teamName);
 		assertFalse(f2);
 	}
-	
+
 	/**
 	 * Find player test.
 	 */
 	@Test
 	public void findPlayerTest() {
-		Vector f3=new Vector();
-		f3=player.findPlayer("勒布朗-詹姆斯");
-		String f33=(String) f3.get(1);
-		assertEquals("勒布朗-詹姆斯",f33);
+		Vector f3 = new Vector();
+		f3 = player.findPlayer("勒布朗-詹姆斯");
+		String f33 = (String) f3.get(1);
+		assertEquals("勒布朗-詹姆斯", f33);
 	}
-	
+
 	/**
 	 * Over.
 	 */

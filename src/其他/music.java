@@ -60,14 +60,7 @@ public class music extends Thread {
 		BufferedInputStream buffer = new BufferedInputStream(new FileInputStream(music));
 		player = new Player(buffer);
 		player.play();
-		System.out.println("Ñ­»·1");
-		while(true) {
-			if(player.isComplete()) {
-			player= new Player(buffer);
-			player.play();
-			System.out.println("Ñ­»·2");
-		}
-		}
+		
 		
 	}
 }

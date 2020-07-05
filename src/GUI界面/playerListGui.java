@@ -42,11 +42,10 @@ public class playerListGui extends JFrame implements ActionListener, FocusListen
 	private JTable table;// 球员列表
 	 
  	/** The title. */
- 	Vector title = new Vector();// 表格中每列的列名集合
+ 	Vector<String > title = new Vector();// 表格中每列的列名集合
 	
 	/** The data. */
-	private Vector data = new Vector();// 表格中数据
-	
+	private Vector<? extends Vector> data = new Vector<>();// 表格中数据
 	/** The log 4 j. */
 	Logger log4j=Logger.getLogger(this.getClass());//日志信息
 	
@@ -80,7 +79,6 @@ public class playerListGui extends JFrame implements ActionListener, FocusListen
     	pd = new playerDAO(connection);
     	titleAdd();
     }
-	
 	/**
 	 * Instantiates a new player list gui.
 	 *

@@ -26,6 +26,7 @@ import javax.swing.JTextField;
 import org.apache.log4j.Logger;
 
 import DAO.connection;
+import DAO.playerDAO;
 import 其他.music;
 
 // TODO: Auto-generated Javadoc
@@ -107,7 +108,7 @@ public class secondGui extends JFrame implements ActionListener, FocusListener, 
 	private playerListGui pl;
 	
 	/** The play 0. */
-	music play0 = new music("music\\one-day.mp3");
+	music play0 = new music("music\\LoveIsGo+oneday+pleaseDontgo.mp3");
 	
 	/** The fa. */
 	private int fa = 0;// 标记音乐的开关
@@ -118,6 +119,7 @@ public class secondGui extends JFrame implements ActionListener, FocusListener, 
 	 * @param connection the connection
 	 */
 	public secondGui(connection connection) {
+		new playerDAO(connection).setAge();//登录成功后刷新球员年龄
 		play0.start();
 		super.setTitle("球队窗口");
 		super.setBounds(0, 0, 800, 1000);

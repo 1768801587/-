@@ -51,7 +51,6 @@ public class playerDAO {
 	public playerDAO(connection connection, String teamName) {
 		conn = connection.conn;
 		this.teamName = teamName;
-		setAge();
 	}
     
     /**
@@ -70,6 +69,7 @@ public class playerDAO {
 		String sql = "update player set age=YEAR(NOW())-birthYear";
 		try {
 			pst = conn.prepareStatement(sql);
+			int line=pst.executeUpdate(sql);
 		} catch (SQLException e) {
 			System.out.println("没有连接到数据库");
 			e.printStackTrace();

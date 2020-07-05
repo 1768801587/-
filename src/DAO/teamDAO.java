@@ -84,7 +84,7 @@ public class teamDAO {
 				JOptionPane.showMessageDialog(null, "没有查询到相关信息!!!");
 			}
 		} catch (SQLException e) {
-			JOptionPane.showMessageDialog(null, "555不存在该球队!!!");
+			JOptionPane.showMessageDialog(null, "不存在该球队!!!");
 			e.printStackTrace();
 		}
 

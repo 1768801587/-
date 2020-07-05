@@ -193,7 +193,7 @@ public class thridGui extends JFrame implements ActionListener, FocusListener,Wi
 		dalab[6].setFont(new Font("楷体", Font.BOLD, 18));
 		dalab[6].setForeground(Color.white);
 		this.getLayeredPane().add(dalab[6]);
-		
+		//
 		playerlist=new JButton("球员列表");
 		playerlist.setBounds(20, 320, 120, 30);
 		playerlist.setFont(new Font("楷体", Font.BOLD, 20));

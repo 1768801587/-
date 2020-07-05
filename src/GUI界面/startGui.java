@@ -183,6 +183,7 @@ public class startGui extends JFrame implements ActionListener, FocusListener {
 		if (e.getSource() == denglu) {
 			if(new login(connection).compare(nametext.getText(), passtext.getText())) {
 				JOptionPane.showMessageDialog(null, "登录成功!!!");
+				
 				//登陆成功后，关掉当前页面，打开所有球队页面
 				super.dispose();
 				new secondGui(connection);
